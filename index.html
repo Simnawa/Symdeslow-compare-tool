@@ -8,6 +8,8 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Symdeslow Compare Tool – Google Sheets Comparison">
@@ -21,39 +23,7 @@
   <meta name="twitter:description" content="Compare Google Sheets quickly with Symdeslow Compare Tool. Highlights differences in four colors and generates detailed reports for analysts, finance teams, and operations managers.">
   <meta name="twitter:image" content="https://img.youtube.com/vi/47Pv8ZOZdgo/0.jpg">
 
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
-      background-color: #f8f9fa;
-      color: #111;
-      line-height: 1.6;
-    }
-    h1, h2, h3 { margin-top: 2rem; }
-    ul, ol { text-align: left; display: inline-block; margin: 1rem 0; }
-    a.button {
-      display: inline-block;
-      background: #0070f3;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    footer { margin-top: 3rem; font-size: 0.9rem; color: gray; }
-    .faq-list { text-align: left; margin-top: 2rem; display: inline-block; max-width: 700px; }
-    .faq-list li { margin-bottom: 1rem; }
-    .faq-list strong { display: block; margin-bottom: 0.3rem; }
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-
-  <!-- FAQ Schema JSON-LD -->
+  <!-- FAQ JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,79 +60,192 @@
           "@type": "Answer",
           "text": "Direct column-to-column comparison and key-based comparison, both with four-color highlighting for easy visual tracking."
         }
-      },
+      }
     ]
   }
   </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f9;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; }
+    h1,h2,h3 { margin: 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 4rem 0 2rem;
+      background: linear-gradient(90deg, #0070f3 0%, #00d4ff 100%);
+      color: white;
+    }
+    header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem; }
+    .hero-button {
+      background: white; color: #0070f3;
+      font-weight: 700; padding: 0.9rem 2rem;
+      border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block; margin-top: 1rem;
+    }
+    .hero-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Navigation */
+    nav ul { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    nav a { color: white; font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: #ffe600; }
+
+    /* Sections */
+    section { padding: 4rem 0; }
+    section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
+    section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
+
+    /* Features */
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      flex: 1 1 250px;
+      max-width: 300px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Video */
+    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin: 2rem 0; }
+    .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px; }
+
+    /* Steps */
+    .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+    .step-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.8rem;
+      flex: 1 1 200px;
+      max-width: 250px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: 2rem auto 0; }
+    .faq-card {
+      background: #f0f4f8; border-left: 4px solid #0070f3; padding: 1.2rem 1.5rem; border-radius: 8px;
+    }
+    .faq-card strong { display: block; margin-bottom: 0.5rem; }
+
+    /* CTA Section */
+    .cta-section { text-align: center; background: #0070f3; color: white; padding: 4rem 1rem; border-radius: 12px; margin: 4rem 0; }
+    .cta-section a.button {
+      background: white; color: #0070f3; font-weight: 700; padding: 0.9rem 2rem; border-radius: 8px;
+      display: inline-block; margin-top: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-section a.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: gray; }
+
+    @media (max-width: 768px) {
+      .features, .steps { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-   <header>
+
+  <header>
     <h1>Symdeslow Compare Tool – Compare Google Sheets Effortlessly</h1>
+    <p>Highlight differences in four colors, generate detailed reports, and save hours of work across teams and departments.</p>
+    <a href="#buy-now" class="hero-button">Buy Now →</a>
     <nav>
       <ul>
-        <li><a href="#demo-video">Demo Video</a></li>
         <li><a href="#features">Features</a></li>
+        <li><a href="#demo-video">Demo Video</a></li>
         <li><a href="#how-to-use">How to Use</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#buy-now">Buy Now</a></li>
+        <li><a href="#buy-now">Purchase</a></li>
       </ul>
     </nav>
   </header>
-  <h2>Save Hours Comparing Google Sheets with Symdeslow Compare Tool</h2>
-  <p>Tired of manually comparing Google Sheets? 
-    Compare Google Sheets efficiently with Symdeslow Compare Tool — highlights differences in four colors and generates detailed reports with just one click. Perfect for routine or complex datasets across multiple teams including analysts, auditors, finance teams, administrative staff, warehouse, sales, procurement, production planning teams, IT, quality control, supply chain teams, operations managers, researchers, and anyone working with routine or more complex datasets.</p>
 
-  <h2 id="demo-video">Demo Video</h2>
-  <div style="margin: 1.5rem 0;">
-    <iframe width="100%" height="415" src="https://www.youtube.com/embed/47Pv8ZOZdgo" 
-            title="Symdeslow Compare Tool Demo: Highlighting Differences in Google Sheets" 
-            frameborder="0" allowfullscreen></iframe>
-  </div>
-  <p>Watch how Symdeslow Compare Tool simplifies your workflow by automatically detecting differences in Google Sheets.</p>
+  <section id="features">
+    <h2>Key Features</h2>
+    <div class="features">
+      <div class="feature-card">Direct column-to-column and key-based comparison</div>
+      <div class="feature-card">Four-color highlighting for easy visual tracking</div>
+      <div class="feature-card">Automatically generates difference and duplicate keys reports</div>
+      <div class="feature-card">Suitable for routine or complex datasets across multiple teams</div>
+    </div>
+  </section>
 
-  <h2 id="features">Key Features</h2>
-  <ul>
-    <li>Direct column-to-column and key-based comparison</li>
-    <li>Four-color highlighting for easy visual tracking</li>
-    <li>Automatically generates difference and duplicate keys reports</li>
-    <li>Suitable for routine or complex datasets across multiple teams and departments</li>
-  </ul>
+  <section id="demo-video">
+    <h2>Demo Video</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/47Pv8ZOZdgo" title="Symdeslow Compare Tool Demo" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <p>Watch how Symdeslow Compare Tool simplifies your workflow by automatically detecting differences in Google Sheets.</p>
+  </section>
 
-  <h2 id="how-to-use">How to Use</h2>
-  <ol>
-    <li>Make a copy of Symdeslow Compare Tool through the link received.</li>
-    <li>Paste your data in Sheet 1 and Sheet 2.</li>
-    <li>Key-based comparison mode: Set your comparison key and data range for comparison. Direct column-to-column comparison mode: skip this step.</li>
-    <li>Click the "Compare Now" button to generate highlights and reports.</li>
-  </ol>
+  <section id="how-to-use">
+    <h2>How to Use</h2>
+    <div class="steps">
+      <div class="step-card"><h3>Step 1</h3>Make a copy of Symdeslow Compare Tool through the link received.</div>
+      <div class="step-card"><h3>Step 2</h3>Paste your data in Sheet 1 and Sheet 2.</div>
+      <div class="step-card"><h3>Step 3</h3>Key-based comparison: Set your comparison key and data range. Direct comparison: skip this step.</div>
+      <div class="step-card"><h3>Step 4</h3>Click "Compare Now" to generate highlights and reports.</div>
+    </div>
+  </section>
 
-  <h2 id="faq">Use Cases & FAQ</h2>
-  <ul class="faq-list">
-    <li>
-      <strong>What types of users is this tool designed for?</strong>
-      Professionals working with Google Sheets who need fast and accurate data comparison across departments. Suitable for teams handling financial data, operations, auditing, quality control, or any repetitive dataset review.
-    </li>
-    <li>
-      <strong>Can it handle very large datasets?</strong>
-      The tool works well for most datasets, but for very large sheets (processing time over ~6 minutes), it's recommended to split the data into smaller sections for smoother performance.
-    </li>
-    <li>
-      <strong>Do I need any external software?</strong>
-      No, Symdeslow Compare Tool works entirely within Google Sheets.
-    </li>
-    <li>
-      <strong>What types of comparison modes are available?</strong>
-      Direct column-to-column comparison and key-based comparison, both with four-color highlighting for easy visual tracking.
-    </li>
-  </ul>
+  <section id="faq">
+    <h2>Use Cases & FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-card">
+        <strong>What types of users is this tool designed for?</strong>
+        Professionals working with Google Sheets who need fast and accurate data comparison across departments. Suitable for teams handling financial data, operations, auditing, quality control, or any repetitive dataset review.
+      </div>
+      <div class="faq-card">
+        <strong>Can it handle very large datasets?</strong>
+        The tool works well for most datasets, but for very large sheets (processing time over ~6 minutes), it's recommended to split the data into smaller sections for smoother performance.
+      </div>
+      <div class="faq-card">
+        <strong>Do I need any external software?</strong>
+        No, Symdeslow Compare Tool works entirely within Google Sheets.
+      </div>
+      <div class="faq-card">
+        <strong>What types of comparison modes are available?</strong>
+        Direct column-to-column comparison and key-based comparison, both with four-color highlighting for easy visual tracking.
+      </div>
+    </div>
+  </section>
 
-  <h2 id="buy-now">Purchase</h2>
-  <a href="https://payhip.com/b/AVLhm" class="button">Buy Now →</a>
-  <p>Currently available only to purchasers from the EU and the UK.</p>
+  <section class="cta-section" id="buy-now">
+    <h2>Purchase Symdeslow Compare Tool</h2>
+    <p>Currently available only to purchasers from the EU and the UK.</p>
+    <a href="https://payhip.com/b/AVLhm" class="button">Buy Now →</a>
+  </section>
 
   <footer>
     © 2025 Symdeslow. All rights reserved.
   </footer>
+
 </body>
 </html>
-
