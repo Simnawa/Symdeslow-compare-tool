@@ -69,6 +69,11 @@ section h2 {
   color: #222;
   text-align: center;
 }
+section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
 
 /* Features 卡片 */
 .features {
@@ -78,7 +83,7 @@ section h2 {
   gap: 2rem;
 }
 .feature-card {
-  background: #ffffffcc;
+  background: #ffffffcc; /* 半透明白色 */
   border-radius: 12px;
   padding: 2rem;
   flex: 1 1 250px;
@@ -98,7 +103,7 @@ section h2 {
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* 自適應比例 */
 }
 .video-wrapper iframe {
   width: 100%;
@@ -121,7 +126,7 @@ section h2 {
   flex: 1 1 200px;
   max-width: 250px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: left;
+  text-align: center;
 }
 .step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
 
@@ -153,48 +158,40 @@ section h2 {
   color: white;
   text-decoration: none;
 }
-.share-buttons a.facebook { background-color: #1877f2; }
+.share-buttons a.facebook { background-color: #0070f3; }
 .share-buttons a.facebook:hover {
-  background-color: #145dbf;
+  background-color: #005ecb;
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
-.share-buttons a.twitter { background-color: #1da1f2; }
+.share-buttons a.twitter { background-color: #0070f3; }
 .share-buttons a.twitter:hover {
-  background-color: #0d95e8;
+  background-color: #005ecb;
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
-/* Blog 文章內容 - 全部置中 */
+/* Blog 文章內容 */
 .blog-content {
   max-width: 800px;
   margin: 0 auto 4rem;
-  background: #ffffffcc;
+  background: #ffffffcc; /* 半透明白色 */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-  text-align: center;
+  text-align: center; /* 全文置中 */
 }
 .blog-content h3 { color: #0070f3; margin-bottom: 1rem; text-align: center; }
-.blog-content p,
-.blog-content ul,
-.blog-content ol,
-.blog-content pre,
-.blog-content code {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
-.blog-content ul, .blog-content ol { padding-left: 0; list-style-position: inside; }
+.blog-content p { margin-bottom: 1rem; line-height: 1.8; text-align: center; }
+.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; text-align: center; display: inline-block; }
 .blog-content pre, .blog-content code {
   background: #f0f4f8;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   display: block;
+  margin: 0 auto 1.5rem;
+  text-align: left; /* 程式碼保持靠左 */
 }
 
 /* TOC */
@@ -204,9 +201,8 @@ section h2 {
   padding: 1rem 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-  text-align: center;
 }
-.toc h3 { margin-bottom: 1rem; color: #0070f3; font-size: 1.2rem; }
+.toc h3 { margin-bottom: 1rem; color: #0070f3; font-size: 1.2rem; text-align: center; }
 .toc ul { list-style: disc inside; padding-left: 0; }
 .toc li { margin-bottom: 0.6rem; }
 .toc a { color: #0070f3; transition: color 0.2s; }
@@ -225,6 +221,7 @@ section h2 {
   border-left: 4px solid #0070f3;
   padding: 1.2rem 1.5rem;
   border-radius: 8px;
+  text-align: center;
 }
 .faq-card strong { display: block; margin-bottom: 0.5rem; }
 
@@ -264,7 +261,10 @@ footer {
 @media (max-width: 768px) {
   .features, .steps { flex-direction: column; align-items: center; }
   section p, pre, code, ul, ol, .blog-content { max-width: 100%; padding: 0.8rem; }
-  .share-buttons { flex-direction: column; gap: 0.8rem; }
+  .share-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
   .share-buttons a { width: 100%; max-width: 220px; margin: 0 auto; }
 }
 </style>
@@ -272,103 +272,103 @@ footer {
 <body>
 
 <header>
-  <h1>Symdeslow Compare Tool</h1>
-  <p>Automatically compare product lists or SKUs in Google Sheets.</p>
-  <a href="#features" class="hero-button">Get Started</a>
+<h1>Symdeslow Compare Tool</h1>
+<p>Automatically compare product lists or SKUs in Google Sheets.</p>
+<a href="#features" class="hero-button">Get Started</a>
 </header>
 
 <nav>
-  <ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#video">Demo</a></li>
-    <li><a href="#steps">Steps</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#video">Demo</a></li>
+<li><a href="#steps">Steps</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
 </nav>
 
 <section id="features">
-  <h2>Features</h2>
-  <div class="features">
-    <div class="feature-card">Direct column comparison</div>
-    <div class="feature-card">Key-based comparison</div>
-    <div class="feature-card">Multi-color highlighting</div>
-  </div>
+<h2>Features</h2>
+<div class="features">
+<div class="feature-card">Direct column comparison</div>
+<div class="feature-card">Key-based comparison</div>
+<div class="feature-card">Multi-color highlighting</div>
+</div>
 </section>
 
 <section id="video">
-  <h2>Demo Video</h2>
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-  </div>
+<h2>Demo Video</h2>
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</div>
 </section>
 
 <section id="steps">
-  <h2>How It Works</h2>
-  <div class="steps">
-    <div class="step-card">
-      <h3>Step 1</h3>
-      Upload your Google Sheets data
-    </div>
-    <div class="step-card">
-      <h3>Step 2</h3>
-      Configure comparison rules
-    </div>
-    <div class="step-card">
-      <h3>Step 3</h3>
-      Generate highlighted report
-    </div>
-  </div>
+<h2>How It Works</h2>
+<div class="steps">
+<div class="step-card">
+<h3>Step 1</h3>
+Upload your Google Sheets data
+</div>
+<div class="step-card">
+<h3>Step 2</h3>
+Configure comparison rules
+</div>
+<div class="step-card">
+<h3>Step 3</h3>
+Generate highlighted report
+</div>
+</div>
 </section>
 
 <section class="share-section">
-  <h2>Share this page</h2>
-  <div class="share-buttons">
-    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Facebook</a>
-    <a class="twitter" href="https://twitter.com/intent/tweet?text=Symdeslow%20Compare%20Tool&url=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Twitter</a>
-  </div>
+<h2>Share this page</h2>
+<div class="share-buttons">
+<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Facebook</a>
+<a class="twitter" href="https://twitter.com/intent/tweet?text=Symdeslow%20Compare%20Tool&url=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Twitter</a>
+</div>
 </section>
 
 <section class="blog-content">
-  <h3>Table of Contents</h3>
-  <div class="toc" id="toc"></div>
+<h3>Table of Contents</h3>
+<div class="toc" id="toc"></div>
 
-  <h3>10. Compare Product Lists or SKUs Automatically in Google Sheets</h3>
-  <p>For e-commerce, procurement, or inventory management, comparing large product lists can be tedious. Our Symdeslow Compare Tool automates this process within Google Sheets, highlighting differences and matches efficiently.</p>
+<h3>10. Compare Product Lists or SKUs Automatically in Google Sheets</h3>
+<p>For e-commerce, procurement, or inventory management, comparing large product lists can be tedious. Our Symdeslow Compare Tool automates this process within Google Sheets, highlighting differences and matches efficiently.</p>
 
-  <h3>Benefits</h3>
-  <ul>
-    <li>Save hours of manual work</li>
-    <li>Supports direct and key-based comparison</li>
-    <li>Highlights changes with multi-color coding</li>
-  </ul>
+<h3>Benefits</h3>
+<ul>
+<li>Save hours of manual work</li>
+<li>Supports direct and key-based comparison</li>
+<li>Highlights changes with multi-color coding</li>
+</ul>
 
-  <h3>Example Usage</h3>
-  <p>Upload your 2024 and 2025 SKU sheets and let the tool highlight returned customers, new products, or missing items automatically:</p>
-  <pre><code>=IFNA(IF(VLOOKUP(A2, '2024'!A:A, 1, FALSE)=A2, "Returned customer"),"NEW in 2025")</code></pre>
+<h3>Example Usage</h3>
+<p>Upload your 2024 and 2025 SKU sheets and let the tool highlight returned customers, new products, or missing items automatically:</p>
+<pre><code>=IFNA(IF(VLOOKUP(A2, '2024'!A:A, 1, FALSE)=A2, "Returned customer"),"NEW in 2025")</code></pre>
 
-  <h3>Tips</h3>
-  <ol>
-    <li>Keep your SKU or product ID columns consistent.</li>
-    <li>Use proper headers for better comparison results.</li>
-    <li>Leverage the multi-color highlighting to track changes visually.</li>
-  </ol>
+<h3>Tips</h3>
+<ol>
+<li>Keep your SKU or product ID columns consistent.</li>
+<li>Use proper headers for better comparison results.</li>
+<li>Leverage the multi-color highlighting to track changes visually.</li>
+</ol>
 </section>
 
 <section id="faq">
-  <h2>FAQ</h2>
-  <div class="faq-list">
-    <div class="faq-card"><strong>Q1:</strong> How do I start? <br> Upload your sheets and click compare.</div>
-    <div class="faq-card"><strong>Q2:</strong> Can I use multiple sheets? <br> Yes, both direct and key-based comparisons are supported.</div>
-  </div>
+<h2>FAQ</h2>
+<div class="faq-list">
+<div class="faq-card"><strong>Q1:</strong> How do I start? <br> Upload your sheets and click compare.</div>
+<div class="faq-card"><strong>Q2:</strong> Can I use multiple sheets? <br> Yes, both direct and key-based comparisons are supported.</div>
+</div>
 </section>
 
 <section class="cta-section">
-  <h2>Get Your Copy</h2>
-  <a href="#" class="button">Purchase Now</a>
+<h2>Get Your Copy</h2>
+<a href="#" class="button">Purchase Now</a>
 </section>
 
 <footer>
-  &copy; 2025 Symdeslow Tools. All rights reserved.
+&copy; 2025 Symdeslow Tools. All rights reserved.
 </footer>
 
 <script>
