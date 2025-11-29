@@ -69,11 +69,6 @@ section h2 {
   color: #222;
   text-align: center;
 }
-section p {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-}
 
 /* Features 卡片 */
 .features {
@@ -83,7 +78,7 @@ section p {
   gap: 2rem;
 }
 .feature-card {
-  background: #ffffffcc; /* 半透明白色 */
+  background: #ffffffcc;
   border-radius: 12px;
   padding: 2rem;
   flex: 1 1 250px;
@@ -103,7 +98,7 @@ section p {
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
-  aspect-ratio: 16 / 9; /* 自適應比例 */
+  aspect-ratio: 16 / 9;
 }
 .video-wrapper iframe {
   width: 100%;
@@ -171,25 +166,35 @@ section p {
   box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
-/* Blog 文章內容 */
+/* Blog 文章內容 - 全部置中 */
 .blog-content {
   max-width: 800px;
   margin: 0 auto 4rem;
-  background: #ffffffcc; /* 半透明白色 */
+  background: #ffffffcc;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  text-align: center;
 }
-.blog-content h3 { color: #0070f3; margin-bottom: 1rem; }
-.blog-content p { margin-bottom: 1rem; line-height: 1.8; text-align: left; }
-.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; text-align: left; }
+.blog-content h3 { color: #0070f3; margin-bottom: 1rem; text-align: center; }
+.blog-content p,
+.blog-content ul,
+.blog-content ol,
+.blog-content pre,
+.blog-content code {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.blog-content ul, .blog-content ol { padding-left: 0; list-style-position: inside; }
 .blog-content pre, .blog-content code {
   background: #f0f4f8;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   display: block;
-  margin-bottom: 1.5rem;
 }
 
 /* TOC */
@@ -199,6 +204,7 @@ section p {
   padding: 1rem 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .toc h3 { margin-bottom: 1rem; color: #0070f3; font-size: 1.2rem; }
 .toc ul { list-style: disc inside; padding-left: 0; }
@@ -258,10 +264,7 @@ footer {
 @media (max-width: 768px) {
   .features, .steps { flex-direction: column; align-items: center; }
   section p, pre, code, ul, ol, .blog-content { max-width: 100%; padding: 0.8rem; }
-  .share-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+  .share-buttons { flex-direction: column; gap: 0.8rem; }
   .share-buttons a { width: 100%; max-width: 220px; margin: 0 auto; }
 }
 </style>
