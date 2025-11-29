@@ -9,166 +9,20 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Symdeslow Compare Tool – Google Sheets Comparison">
+  <meta property="og:title" content="Symdeslow Compare Tool – Compare and Highlight Differences in Google Sheets">
   <meta property="og:description" content="Compare Google Sheets quickly with Symdeslow Compare Tool. Highlights differences in four colors and generates detailed reports for analysts, finance teams, and operations managers.">
   <meta property="og:url" content="https://symdeslow-compare-tool.pages.dev">
-  <meta property="og:image" content="https://img.youtube.com/vi/47Pv8ZOZdgo/0.jpg">
+  <meta property="og:image" content="favicon.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Symdeslow Compare Tool – Google Sheets Comparison">
+  <meta name="twitter:title" content="Symdeslow Compare Tool – Compare and Highlight Differences in Google Sheets">
   <meta name="twitter:description" content="Compare Google Sheets quickly with Symdeslow Compare Tool. Highlights differences in four colors and generates detailed reports for analysts, finance teams, and operations managers.">
-  <meta name="twitter:image" content="https://img.youtube.com/vi/47Pv8ZOZdgo/0.jpg">
-
-  <!-- FAQ JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What types of users is this tool designed for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Professionals working with Google Sheets who need fast and accurate data comparison across departments. Suitable for teams handling financial data, operations, auditing, quality control, or any repetitive dataset review."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can it handle very large datasets?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The tool works well for most datasets, but for very large sheets (processing time over ~6 minutes), it's recommended to split the data into smaller sections for smoother performance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need any external software?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, Symdeslow Compare Tool works entirely within Google Sheets."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What types of comparison modes are available?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Direct column-to-column comparison and key-based comparison, both with four-color highlighting for easy visual tracking."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6f9;
-      color: #111;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a { text-decoration: none; }
-    h1,h2,h3 { margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 4rem 0 2rem;
-      background: linear-gradient(90deg, #0070f3 0%, #00d4ff 100%);
-      color: white;
-    }
-    header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    header p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem; }
-    .hero-button {
-      background: white; color: #0070f3;
-      font-weight: 700; padding: 0.9rem 2rem;
-      border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s;
-      display: inline-block; margin-top: 1rem;
-    }
-    .hero-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /* Navigation */
-    nav ul { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-    nav a { color: white; font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: #ffe600; }
-
-    /* Sections */
-    section { padding: 4rem 0; }
-    section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #222; text-align: center; }
-    section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
-
-    /* Features */
-    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-    .feature-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      flex: 1 1 250px;
-      max-width: 300px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-
-    /* Video */
-    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin: 2rem 0; }
-    .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 12px; }
-
-    /* Steps */
-    .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
-    .step-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.8rem;
-      flex: 1 1 200px;
-      max-width: 250px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    .step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: 2rem auto 0; }
-    .faq-card {
-      background: #f0f4f8; border-left: 4px solid #0070f3; padding: 1.2rem 1.5rem; border-radius: 8px;
-    }
-    .faq-card strong { display: block; margin-bottom: 0.5rem; }
-
-    /* CTA Section */
-    .cta-section { text-align: center; background: #0070f3; color: white; padding: 4rem 1rem; border-radius: 12px; margin: 4rem 0; }
-    .cta-section a.button {
-      background: white; color: #0070f3; font-weight: 700; padding: 0.9rem 2rem; border-radius: 8px;
-      display: inline-block; margin-top: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cta-section a.button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /* Footer */
-    footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: gray; }
-
-    @media (max-width: 768px) {
-      .features, .steps { flex-direction: column; align-items: center; }
-    }
-  </style>
+  <meta name="twitter:image" content="favicon.png">
 </head>
 <body>
 
@@ -183,6 +37,8 @@
         <li><a href="#how-to-use">How to Use</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#buy-now">Purchase</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="signup.html">Free Trial</a></li>
       </ul>
     </nav>
   </header>
@@ -241,6 +97,14 @@
     <h2>Purchase Symdeslow Compare Tool</h2>
     <p>Currently available only to purchasers from the EU and the UK.</p>
     <a href="https://payhip.com/b/AVLhm" class="button">Buy Now →</a>
+  </section>
+
+  <section>
+    <h2>Share this page</h2>
+    <p>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Facebook</a> |
+      <a href="https://twitter.com/intent/tweet?text=Symdeslow%20Compare%20Tool&url=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Twitter</a>
+    </p>
   </section>
 
   <footer>
