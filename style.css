@@ -1,214 +1,172 @@
-/* --- Global Reset & Base --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* 基本樣式 */
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  background-color: #f4f6f9;
   color: #111;
-  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
+a { text-decoration: none; color: inherit; }
+h1, h2, h3 { margin: 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* --- Header --- */
+/* Header */
 header {
-  background-color: #ffffff;
-  padding: 40px 20px 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 4rem 1rem 2rem;
+  background: linear-gradient(90deg, #0070f3 0%, #00d4ff 100%);
+  color: white;
 }
-
-header h1 {
-  font-size: 2.5rem;
+header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+header p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem; }
+.hero-button {
+  background: white;
+  color: #0070f3;
   font-weight: 700;
-  margin-bottom: 10px;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #555;
-}
-
+/* Navigation */
 nav ul {
   list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 15px;
 }
-
-nav ul li a {
+nav a {
+  color: white;
   font-weight: 600;
-  padding: 8px 12px;
   transition: color 0.3s;
 }
+nav a:hover { color: #ffe600; }
 
-nav ul li a:hover {
-  color: #0070f3;
-}
-
-/* --- Hero Button --- */
-.hero-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #0070f3;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 6px;
-  margin-top: 20px;
-  transition: background-color 0.3s;
-}
-
-.hero-button:hover {
-  background-color: #005ecc;
-}
-
-/* --- Section Containers --- */
-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Section */
+section { padding: 4rem 0; }
 section h2 {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
+  color: #222;
   text-align: center;
 }
+section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
 
-section p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+/* Features 卡片 */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   text-align: center;
-  color: #555;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* --- Feature Cards / Steps / FAQ --- */
-.features, .steps, .faq-list {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 30px;
+/* Video */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 2rem 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  border-radius: 12px;
 }
 
-.feature-card, .step-card, .faq-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Steps 卡片 */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
-
-.feature-card:hover, .step-card:hover, .faq-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+.step-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  flex: 1 1 200px;
+  max-width: 250px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
 }
+.step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
 
-.feature-card h3, .step-card h3 {
-  margin-bottom: 10px;
-  font-weight: 600;
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto 0;
 }
+.faq-card {
+  background: #f0f4f8;
+  border-left: 4px solid #0070f3;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+}
+.faq-card strong { display: block; margin-bottom: 0.5rem; }
 
-/* --- CTA Section --- */
+/* CTA */
 .cta-section {
   text-align: center;
-  background-color: #0070f3;
-  color: #fff;
-  padding: 60px 20px;
+  background: #0070f3;
+  color: white;
+  padding: 4rem 1rem;
   border-radius: 12px;
-  margin: 60px 20px;
+  margin: 4rem 0;
 }
-
-.cta-section h2 {
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.cta-section .button {
-  display: inline-block;
-  padding: 14px 40px;
-  background-color: #ffffff;
+.cta-section a.button {
+  background: white;
   color: #0070f3;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.cta-section .button:hover {
-  background-color: #e0e0e0;
-  color: #005ecc;
-}
-
-/* --- Video Wrapper --- */
-.video-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 450px;
-  border-radius: 12px;
-}
-
-/* --- Code / Pre --- */
-pre {
-  background-color: #f4f4f4;
-  padding: 15px;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
   border-radius: 8px;
-  overflow-x: auto;
-  margin-bottom: 20px;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-section a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* --- Share Links --- */
-section a {
-  margin: 0 10px;
-  font-weight: 600;
-}
-
-/* --- Footer --- */
+/* Footer */
 footer {
-  background-color: #ffffff;
   text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+  padding: 2rem 0;
   font-size: 0.9rem;
-  color: #555;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  color: gray;
 }
 
-/* --- Container --- */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  section h2 {
-    font-size: 1.6rem;
-  }
-
-  .video-wrapper iframe {
-    height: 300px;
-  }
+  .features, .steps { flex-direction: column; align-items: center; }
 }
