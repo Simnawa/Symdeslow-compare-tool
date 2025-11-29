@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Symdeslow Compare Tool Blog</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 /* 基本樣式 */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f4f6f9;
   color: #111;
   margin: 0;
@@ -40,8 +40,8 @@ header p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem; }
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .hero-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Navigation */
@@ -83,7 +83,7 @@ section p {
   gap: 2rem;
 }
 .feature-card {
-  background: white;
+  background: #ffffffcc; /* 半透明白色 */
   border-radius: 12px;
   padding: 2rem;
   flex: 1 1 250px;
@@ -103,13 +103,11 @@ section p {
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  aspect-ratio: 16 / 9; /* 自適應比例 */
 }
 .video-wrapper iframe {
-  position: absolute;
-  top:0; left:0;
-  width:100%; height:100%;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
 }
 
@@ -122,13 +120,13 @@ section p {
   margin-top: 2rem;
 }
 .step-card {
-  background: white;
+  background: #ffffffcc;
   border-radius: 12px;
   padding: 1.8rem;
   flex: 1 1 200px;
   max-width: 250px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: center;
+  text-align: left;
 }
 .step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
 
@@ -153,42 +151,38 @@ section p {
 }
 .share-buttons a {
   display: inline-block;
-  padding: 0.6rem 1.4rem;
+  padding: 0.6rem 1.6rem;
   border-radius: 8px;
   font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   color: white;
   text-decoration: none;
 }
-.share-buttons a.facebook {
-  background-color: #1877f2;
-}
+.share-buttons a.facebook { background-color: #1877f2; }
 .share-buttons a.facebook:hover {
   background-color: #145dbf;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
-.share-buttons a.twitter {
-  background-color: #1da1f2;
-}
+.share-buttons a.twitter { background-color: #1da1f2; }
 .share-buttons a.twitter:hover {
   background-color: #0d95e8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 /* Blog 文章內容 */
 .blog-content {
   max-width: 800px;
   margin: 0 auto 4rem;
-  background: white;
+  background: #ffffffcc; /* 半透明白色 */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 .blog-content h3 { color: #0070f3; margin-bottom: 1rem; }
-.blog-content p { margin-bottom: 1rem; line-height: 1.8; }
-.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.blog-content p { margin-bottom: 1rem; line-height: 1.8; text-align: left; }
+.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; text-align: left; }
 .blog-content pre, .blog-content code {
   background: #f0f4f8;
   padding: 1rem;
@@ -206,25 +200,11 @@ section p {
   border-radius: 8px;
   margin-bottom: 2rem;
 }
-.toc h3 {
-  margin-bottom: 1rem;
-  color: #0070f3;
-  font-size: 1.2rem;
-}
-.toc ul {
-  list-style: disc inside;
-  padding-left: 0;
-}
-.toc li {
-  margin-bottom: 0.6rem;
-}
-.toc a {
-  color: #0070f3;
-  transition: color 0.2s;
-}
-.toc a:hover {
-  text-decoration: underline;
-}
+.toc h3 { margin-bottom: 1rem; color: #0070f3; font-size: 1.2rem; }
+.toc ul { list-style: disc inside; padding-left: 0; }
+.toc li { margin-bottom: 0.6rem; }
+.toc a { color: #0070f3; transition: color 0.2s; }
+.toc a:hover { text-decoration: underline; }
 
 /* FAQ */
 .faq-list {
@@ -259,11 +239,11 @@ section p {
   border-radius: 8px;
   display: inline-block;
   margin-top: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .cta-section a.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* Footer */
