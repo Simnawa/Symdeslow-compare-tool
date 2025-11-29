@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symdeslow Compare Tool Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
 /* 基本樣式 */
 body {
   font-family: 'Inter', sans-serif;
@@ -53,7 +61,7 @@ nav a {
 }
 nav a:hover { color: #ffe600; }
 
-/* Section */
+/* Sections */
 section { padding: 4rem 0; }
 section h2 {
   font-size: 2rem;
@@ -61,7 +69,11 @@ section h2 {
   color: #222;
   text-align: center;
 }
-section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
+section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
 
 /* Features 卡片 */
 .features {
@@ -89,8 +101,10 @@ section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  margin: 2rem 0;
+  max-width: 800px;
+  margin: 2rem auto;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 ratio */
 }
 .video-wrapper iframe {
   position: absolute;
@@ -118,6 +132,100 @@ section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
 }
 .step-card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #0070f3; }
 
+/* Share 區塊 */
+.share-section {
+  text-align: center;
+  margin: 2rem 0 4rem;
+  font-size: 1rem;
+  color: #333;
+}
+.share-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.share-buttons a {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  color: white;
+  text-decoration: none;
+}
+.share-buttons a.facebook {
+  background-color: #1877f2;
+}
+.share-buttons a.facebook:hover {
+  background-color: #145dbf;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.share-buttons a.twitter {
+  background-color: #1da1f2;
+}
+.share-buttons a.twitter:hover {
+  background-color: #0d95e8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Blog 文章內容 */
+.blog-content {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+.blog-content h3 { color: #0070f3; margin-bottom: 1rem; }
+.blog-content p { margin-bottom: 1rem; line-height: 1.8; }
+.blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.blog-content pre, .blog-content code {
+  background: #f0f4f8;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* TOC */
+.toc {
+  background: #e7f3ff;
+  border-left: 4px solid #0070f3;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+.toc h3 {
+  margin-bottom: 1rem;
+  color: #0070f3;
+  font-size: 1.2rem;
+}
+.toc ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+.toc li {
+  margin-bottom: 0.6rem;
+}
+.toc a {
+  color: #0070f3;
+  transition: color 0.2s;
+}
+.toc a:hover {
+  text-decoration: underline;
+}
+
 /* FAQ */
 .faq-list {
   display: flex;
@@ -134,7 +242,7 @@ section p { text-align: center; max-width: 800px; margin: 0 auto 2rem; }
 }
 .faq-card strong { display: block; margin-bottom: 0.5rem; }
 
-/* CTA */
+/* CTA Section */
 .cta-section {
   text-align: center;
   background: #0070f3;
@@ -169,4 +277,139 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .features, .steps { flex-direction: column; align-items: center; }
+  section p, pre, code, ul, ol, .blog-content { max-width: 100%; padding: 0.8rem; }
+  .share-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .share-buttons a { width: 100%; max-width: 220px; margin: 0 auto; }
 }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Symdeslow Compare Tool</h1>
+  <p>Automatically compare product lists or SKUs in Google Sheets.</p>
+  <a href="#features" class="hero-button">Get Started</a>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#video">Demo</a></li>
+    <li><a href="#steps">Steps</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<section id="features">
+  <h2>Features</h2>
+  <div class="features">
+    <div class="feature-card">Direct column comparison</div>
+    <div class="feature-card">Key-based comparison</div>
+    <div class="feature-card">Multi-color highlighting</div>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Demo Video</h2>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="steps">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step-card">
+      <h3>Step 1</h3>
+      Upload your Google Sheets data
+    </div>
+    <div class="step-card">
+      <h3>Step 2</h3>
+      Configure comparison rules
+    </div>
+    <div class="step-card">
+      <h3>Step 3</h3>
+      Generate highlighted report
+    </div>
+  </div>
+</section>
+
+<section class="share-section">
+  <h2>Share this page</h2>
+  <div class="share-buttons">
+    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Facebook</a>
+    <a class="twitter" href="https://twitter.com/intent/tweet?text=Symdeslow%20Compare%20Tool&url=https://symdeslow-compare-tool.pages.dev" target="_blank">Share on Twitter</a>
+  </div>
+</section>
+
+<section class="blog-content">
+  <h3>Table of Contents</h3>
+  <div class="toc" id="toc"></div>
+
+  <h3>10. Compare Product Lists or SKUs Automatically in Google Sheets</h3>
+  <p>For e-commerce, procurement, or inventory management, comparing large product lists can be tedious. Our Symdeslow Compare Tool automates this process within Google Sheets, highlighting differences and matches efficiently.</p>
+
+  <h3>Benefits</h3>
+  <ul>
+    <li>Save hours of manual work</li>
+    <li>Supports direct and key-based comparison</li>
+    <li>Highlights changes with multi-color coding</li>
+  </ul>
+
+  <h3>Example Usage</h3>
+  <p>Upload your 2024 and 2025 SKU sheets and let the tool highlight returned customers, new products, or missing items automatically:</p>
+  <pre><code>=IFNA(IF(VLOOKUP(A2, '2024'!A:A, 1, FALSE)=A2, "Returned customer"),"NEW in 2025")</code></pre>
+
+  <h3>Tips</h3>
+  <ol>
+    <li>Keep your SKU or product ID columns consistent.</li>
+    <li>Use proper headers for better comparison results.</li>
+    <li>Leverage the multi-color highlighting to track changes visually.</li>
+  </ol>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-card"><strong>Q1:</strong> How do I start? <br> Upload your sheets and click compare.</div>
+    <div class="faq-card"><strong>Q2:</strong> Can I use multiple sheets? <br> Yes, both direct and key-based comparisons are supported.</div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Get Your Copy</h2>
+  <a href="#" class="button">Purchase Now</a>
+</section>
+
+<footer>
+  &copy; 2025 Symdeslow Tools. All rights reserved.
+</footer>
+
+<script>
+// 自動生成 TOC
+const tocContainer = document.getElementById('toc');
+const blogContent = document.querySelector('.blog-content');
+const headings = blogContent.querySelectorAll('h3');
+
+if (headings.length > 1) {
+  const ul = document.createElement('ul');
+  headings.forEach((h, i) => {
+    if (i === 0) return; // skip TOC heading itself
+    const id = `heading-${i}`;
+    h.id = id;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `#${id}`;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  tocContainer.appendChild(ul);
+}
+</script>
+
+</body>
+</html>
