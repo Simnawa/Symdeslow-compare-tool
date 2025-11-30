@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detect Missing or Duplicate Products in Google Sheets – Symdeslow Compare Tool</title>
+  <meta name="description" content="Learn practical methods to detect missing or duplicate products in Google Sheets, using formulas, conditional formatting, and automated tools.">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Detect Missing or Duplicate Products in Google Sheets – Symdeslow Compare Tool">
+  <meta property="og:description" content="Learn practical methods to detect missing or duplicate products in Google Sheets, using formulas, conditional formatting, and automated tools.">
+  <meta property="og:url" content="https://symdeslow-compare-tool.pages.dev/detect-missing-duplicate-products.html">
+  <meta property="og:image" content="favicon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Detect Missing or Duplicate Products in Google Sheets – Symdeslow Compare Tool">
+  <meta name="twitter:description" content="Learn practical methods to detect missing or duplicate products in Google Sheets, using formulas, conditional formatting, and automated tools.">
+  <meta name="twitter:image" content="favicon.png">
+</head>
+<body>
+
+  <header>
+    <h1>Detect Missing or Duplicate Products in Google Sheets</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog-index.html">Blog Home</a></li>
+        <li><a href="signup.html">Free Trial / Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>1. Detect Missing Products</h2>
+      <p>Check which products from your old list are missing in the new one.</p>
+      <pre>=IF(ISNA(MATCH(A2, 'NewList'!A:A, 0)), "Missing", "Exists")</pre>
+    </section>
+
+    <section>
+      <h2>2. Identify Duplicate Products</h2>
+      <p>Use formulas to quickly find duplicate SKUs in your sheet.</p>
+      <pre>=IF(COUNTIF(A:A, A2)>1, "Duplicate", "Unique")</pre>
+    </section>
+
+    <section>
+      <h2>3. Conditional Formatting</h2>
+      <p>Highlight missing or duplicate products without extra columns.</p>
+      <pre>
+Select your SKU column
+Format → Conditional Formatting → Custom formula:
+=ISNA(MATCH(A2, 'NewList'!A:A, 0))  → Highlight missing
+=COUNTIF(A:A, A2)>1               → Highlight duplicates
+Choose a color fill
+      </pre>
+    </section>
+
+    <section>
+      <h2>4. Automated Tools (Apps Script or Add-ons)</h2>
+      <pre>
+function highlightIssues() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Products");
+  // loop through SKUs and mark missing or duplicates
+}
+      </pre>
+      <p>Automate detection instantly with <a href="signup.html">Symdeslow Compare Tool</a>.</p>
+    </section>
+
+    <section>
+      <h2>Share this guide</h2>
+      <p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://symdeslow-compare-tool.pages.dev/detect-missing-duplicate-products.html" target="_blank">Share on Facebook</a> |
+        <a href="https://twitter.com/intent/tweet?text=Detect%20Missing%20or%20Duplicate%20Products%20in%20Google%20Sheets&url=https://symdeslow-compare-tool.pages.dev/detect-missing-duplicate-products.html" target="_blank">Share on Twitter</a>
+      </p>
+    </section>
+
+    <section>
+      <p><a href="blog-index.html">Back to Blog Home</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Symdeslow. All rights reserved.
+  </footer>
+
+</body>
+</html>
