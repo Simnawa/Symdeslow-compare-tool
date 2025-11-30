@@ -225,6 +225,25 @@ section p {
 }
 .faq-card strong { display: block; margin-bottom: 0.5rem; }
 
+/* 新增：Blog 列表頁 CSS */
+.blog-list {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+}
+.blog-list li {
+  background: #ffffffcc;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.blog-list li:hover { transform: translateY(-2px); }
+.blog-list a { color: #0070f3; font-weight: 600; }
+
+
+
 /* CTA Section */
 .cta-section {
   text-align: center;
