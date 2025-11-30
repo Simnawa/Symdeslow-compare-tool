@@ -184,15 +184,18 @@ section p {
 .blog-content h3 { color: #0070f3; margin-bottom: 1rem; text-align: center; }
 .blog-content p { margin-bottom: 1rem; line-height: 1.8; text-align: center; }
 .blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 1rem; text-align: center; display: inline-block; }
-.blog-content pre, .blog-content code {
+.blog-content pre,
+.blog-content code {
   background: #f0f4f8;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   display: block;
-  margin: 0 auto 1.5rem;
-  text-align: center; /* 程式碼保持靠中 */
+  margin: 0 auto 1.5rem; /* 這樣 <pre> 本體會置中 */
+  max-width: 90%;       /* 不要滿版，視覺更舒適 */
+  text-align: left;     /* 程式碼保持靠左，閱讀最佳 */
 }
+
 
 /* TOC */
 .toc {
