@@ -191,7 +191,7 @@ section p {
   overflow-x: auto;
   display: block;
   margin: 0 auto 1.5rem;
-  text-align: left; /* 程式碼保持靠左 */
+  text-align: center; /* 程式碼保持靠中 */
 }
 
 /* TOC */
