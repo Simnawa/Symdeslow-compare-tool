@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Symdeslow Compare Tool</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    p { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: December 2025</p>
+
+  <p>I respect your privacy and are committed to protecting the personal information you provide.</p>
+
+  <h2>Information I Collect</h2>
+  <p>The only information collected through the Symdeslow Compare Tool trial signup form is:</p>
+  <ul>
+    <li>Email address</li>
+    <li>Country</li>
+    <li>Optional: Use case</li>
+  </ul>
+
+  <h2>Purpose of Collection</h2>
+  <p>The information you provide is used solely to:</p>
+  <ul>
+    <li>Notify you when the 3-week free trial is available</li>
+    <li>Plan future global access and improve the product</li>
+    <li>Gather feedback from users who voluntarily provide their use case</li>
+  </ul>
+
+  <h2>Data Sharing</h2>
+  <p>Your personal information will <strong>not</strong> be shared with any third parties.</p>
+
+  <h2>Your Rights</h2>
+  <p>You can request to have your data deleted at any time by sending an email to: <a href="mailto:symdeslow.service@gmail.com">symdeslow.service@gmail.com</a>.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>This privacy policy may be updated occasionally. Any updates will be reflected on this page.</p>
+
+  <p>By signing up for the Symdeslow Compare Tool trial, you agree to this Privacy Policy.</p>
+</body>
+</html>
